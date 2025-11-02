@@ -30,7 +30,8 @@
   "author": "John Ilesanmi",
   "license": "ISC",
   "files": [
-    "bin/",
+    "bin",
+    "dist",
     "src/",
     "README.md",
     "LICENSE",
