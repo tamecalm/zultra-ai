@@ -1,15 +1,10 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+## v1.0.0 — 2025-11-02
 
-## [v1.0.0] - 2025-11-02
+### Added
+- Edit command usage examples for easier onboarding and clarity
 
-### 🚀 Initial Release
+### Changed
+- Renamed `LICENSE.md` to `LICENSE` for standard OSS compliance
 
-The first stable release of the project.
-
-#### ✅ Features & Improvements
-- Added usage examples for the `edit` command to improve clarity and usability.
-
-#### 🧹 Maintenance
-- Renamed `LICENSE.md` to `LICENSE` to align with open-source file naming standards.
