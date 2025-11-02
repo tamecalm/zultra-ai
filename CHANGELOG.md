@@ -17,3 +17,7 @@ Format based on Keep a Changelog.
 ## v1.0.3
 
 - chore(release): v1.0.2
+
+## v1.0.3
+
+- docs(legal): add ISC license and comprehensive security policy
