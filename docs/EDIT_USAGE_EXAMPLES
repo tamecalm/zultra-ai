@@ -1,0 +1,134 @@
+# Nuvon Edit Command - 20 Usage Examples
+
+## Basic Single File Editing
+
+### 1. Add error handling to a single file
+```bash
+nuvon edit src/api.js "Add error handling to all fetch calls"
+```
+
+### 2. Update imports in a file
+```bash
+nuvon edit src/utils/helper.js "Update all CommonJS requires to ES6 imports"
+```
+
+### 3. Add JSDoc comments
+```bash
+nuvon edit src/services/user.js "Add comprehensive JSDoc comments to all functions"
+```
+
+### 4. Refactor variable names
+```bash
+nuvon edit src/components/Form.jsx "Rename all 'temp' variables to meaningful names based on their usage"
+```
+
+## Glob Pattern Matching
+
+### 5. Update all test files to use Vitest
+```bash
+nuvon edit "src/**/*.test.js" "Update all tests to use vitest instead of jest"
+```
+
+### 6. Add TypeScript types to all service files
+```bash
+nuvon edit "src/services/**/*.js" "Convert to TypeScript with proper type annotations"
+```
+
+### 7. Refactor console.logs across entire src directory
+```bash
+nuvon edit "src/**/*.js" "Replace all console.logs with a logger utility from src/utils/logger"
+```
+
+### 8. Update all component PropTypes
+```bash
+nuvon edit "src/components/**/*.jsx" "Add PropTypes validation to all component exports"
+```
+
+## Package.json Management
+
+### 9. Add a single package
+```bash
+nuvon edit package.json --add express
+```
+
+### 10. Add another package
+```bash
+nuvon edit package.json --add "react-router-dom"
+```
+
+## Dry Run and Preview
+
+### 11. Preview changes without applying (dry-run)
+```bash
+nuvon edit src/utils/math.js --dry-run "Add input validation to all math functions"
+```
+
+### 12. Preview multiple file changes
+```bash
+nuvon edit "src/**/*.js" --dry-run "Add error logging to all async functions"
+```
+
+## Auto-Confirm Changes
+
+### 13. Auto-confirm all changes (no prompts)
+```bash
+nuvon edit src/config.js --yes "Update all configuration defaults for production"
+```
+
+### 14. Auto-confirm with dry-run to see what would happen
+```bash
+nuvon edit "src/**/*.jsx" --yes --dry-run "Convert all class components to functional components"
+```
+
+## Backup and Recovery
+
+### 15. Create backups before editing
+```bash
+nuvon edit src/database.js --backup "Refactor all database connection logic"
+```
+
+### 16. Edit multiple files with automatic backups
+```bash
+nuvon edit "src/models/**/*.js" --backup "Add database validation methods to all models"
+```
+
+## Undo Operations
+
+### 17. Undo the last edit to a specific file
+```bash
+nuvon edit src/api.js --undo
+```
+
+### 18. Undo changes to a file in package.json
+```bash
+nuvon edit package.json --undo
+```
+
+## Complex Multi-File Operations
+
+### 19. Refactor all components with backup and confirmation
+```bash
+nuvon edit "src/components/**/*.jsx" --backup "Add React hooks and remove class component logic"
+```
+
+### 20. Create new files with full instruction
+```bash
+nuvon edit "src/middleware/auth.js" --create "Create authentication middleware with JWT validation"
+```
+
+## Advanced Combinations
+
+### Bonus Example 1: Full workflow with all options
+```bash
+nuvon edit "src/**/*.js" --dry-run --backup "Add error handling, logging, and types"
+```
+
+### Bonus Example 2: Quick edit without confirmation
+```bash
+nuvon edit src/utils/validators.js --yes "Add comprehensive input validation"
+```
+
+### Bonus Example 3: Refactor entire codebase
+```bash
+nuvon edit "src/**/*.{js,jsx}" --backup --yes "Update all imports to use absolute paths"
+```
