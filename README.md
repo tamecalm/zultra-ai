@@ -14,13 +14,15 @@ Zultra is an intelligent AI-powered developer assistant for the terminal. It hel
 
 1. Install Zultra:
 
-sh
+```sh
 npm install -g @zultralabs/ai
+```
 
 2. Configure your API key:
 
-sh
+```sh
 zultra config set key YOUR_GEMINI_API_KEY
+```
 
 3. Navigate to your project directory and run `zultra`.
 
