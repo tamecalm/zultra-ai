@@ -4,20 +4,12 @@ Format based on Keep a Changelog.
 
 ## [Unreleased]
 
-## 1.0.0
+## [1.1.1] - 2025-11-02
 
-- Added usage examples for the `edit` command to improve clarity for new users
-- Renamed `LICENSE.md` to `LICENSE` to follow standard open-source conventions
+- Fixed module resolution error by including src/ directory in published package
+- Updated package.json files array to include source files
 
-## v1.0.2
+## [1.1.0] - 2025-11-02
 
-- Added new edit command enhancements
-
-
-## v1.0.3
-
-- chore(release): v1.0.2
-
-## v1.0.3
-
-- docs(legal): add ISC license and comprehensive security policy
+- Added usage examples for the edit command to improve clarity for new users
+- Renamed LICENSE.md to LICENSE to follow standard open-source conventions

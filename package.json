@@ -11,8 +11,7 @@
     "node": ">18.0.0"
   },
   "scripts": {
-    "prepare": "node -e \"if (!process.env.AUTHORIZED) { console.error('ERROR: Direct publishing is not allowed.\\nPlease use the zultra-publish.sh script to publish this package.'); process.exit(1); }\"",
-    "release": "node scripts/release.js"
+    "prepare": "node -e \"if (!process.env.AUTHORIZED) { console.error('ERROR: Direct publishing is not allowed.\\nPlease use the zultra-publish.sh script to publish this package.'); process.exit(1); }\""
   },
   "keywords": [
     "cli",
@@ -32,6 +31,7 @@
   "license": "ISC",
   "files": [
     "bin/",
+    "src/",
     "README.md",
     "LICENSE",
     "SECURITY.md",
