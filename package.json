@@ -1,0 +1,53 @@
+{
+  "name": "@zultra/ai",
+  "version": "1.0.0",
+  "description": "Zultra is an intelligent ai-powered developer assistant for the terminal. it helps you generate, modify, and document code effortlessly, right from your command line.",
+  "type": "module",
+  "main": "bin/zultra.js",
+  "bin": {
+    "zultra": "./bin/zultra.js"
+  },
+  "engines": {
+    "node": ">18.0.0"
+  },
+  "scripts": {
+    "prepare": "node -e \"if (!process.env.AUTHORIZED) { console.error('ERROR: Direct publishing is not allowed.\\nPlease use the zultra-publish.sh script to publish this package.'); process.exit(1); }\"",
+    "release": "node scripts/release.js"
+  },
+  "keywords": [
+    "cli",
+    "ai",
+    "automation",
+    "developer-tools",
+    "workflow",
+    "zultra",
+    "gemini",
+    "developer-tool",
+    "automation",
+    "nodejs",
+    "readme-generator",
+    "code-assistant"
+  ],
+  "author": "John Ilesanmi",
+  "license": "ISC",
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "chalk": "^4.1.2",
+    "commander": "^14.0.2",
+    "diff": "^5.1.0",
+    "fast-glob": "^3.3.2",
+    "figlet": "^1.9.3",
+    "highlight.js": "^11.9.0",
+    "inquirer": "^8.2.7",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^4.1.0"
+  }
+}

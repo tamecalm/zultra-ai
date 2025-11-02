@@ -1,4 +1,8 @@
 # Changelog
+All notable changes will be documented in this file.
+Format based on Keep a Changelog.
+
+## [Unreleased]
 
 ## 1.0.0
 
