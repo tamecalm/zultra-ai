@@ -9,7 +9,11 @@ Format based on Keep a Changelog.
 - Added usage examples for the `edit` command to improve clarity for new users
 - Renamed `LICENSE.md` to `LICENSE` to follow standard open-source conventions
 
-## v1.0.1
+## v1.0.2
 
 - Added new edit command enhancements
 
+
+## v1.0.3
+
+- chore(release): v1.0.2
