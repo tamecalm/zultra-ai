@@ -1,17 +1,18 @@
 {
   "name": "@zultralabs/ai",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Zultra is an intelligent ai-powered developer assistant for the terminal. it helps you generate, modify, and document code effortlessly, right from your command line.",
   "type": "module",
-  "main": "bin/zultra.js",
+  "main": "dist/bin/zultra.js",
   "bin": {
-    "zultra": "./bin/zultra.js"
+    "zultra": "./dist/bin/zultra.js"
   },
   "engines": {
     "node": ">18.0.0"
   },
   "scripts": {
-    "prepare": "node -e \"if (!process.env.AUTHORIZED) { console.error('ERROR: Direct publishing is not allowed.\\nPlease use the zultra-publish.sh script to publish this package.'); process.exit(1); }\""
+    "dev": "node ./bin/zultra.ts",
+    "build": "tsc"
   },
   "keywords": [
     "cli",
@@ -30,9 +31,7 @@
   "author": "John Ilesanmi",
   "license": "ISC",
   "files": [
-    "bin",
     "dist",
-    "src/",
     "README.md",
     "LICENSE",
     "SECURITY.md",
@@ -50,6 +49,12 @@
     "ora": "^5.4.1"
   },
   "devDependencies": {
-    "javascript-obfuscator": "^4.1.0"
+    "@types/diff": "^5.0.9",
+    "@types/figlet": "^1.5.8",
+    "@types/inquirer": "^8.2.10",
+    "@types/node": "^20.10.0",
+    "javascript-obfuscator": "^4.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }
