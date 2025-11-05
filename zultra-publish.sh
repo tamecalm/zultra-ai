@@ -10,9 +10,11 @@ NC='\033[0m'
 echo -e "${BLUE}🔍 VERIFYING NPM PACKAGE CONTENTS...${NC}"
 echo ""
 
-REQUIRED_FILES=("package.json" "zultra.js" "README.md" "LICENSE")
+# Files that must exist for publishing
+REQUIRED_FILES=("package.json" "dist/zultra.js" "README.md" "LICENSE")
 MISSING_FILES=()
 
+# Check existence of required files
 for file in "${REQUIRED_FILES[@]}"; do
   if [ -f "$file" ]; then
     echo -e "${GREEN}✓${NC} Found: $file"
@@ -22,30 +24,9 @@ for file in "${REQUIRED_FILES[@]}"; do
   fi
 done
 
-if [ -d "zultra" ]; then
-  BINARY_COUNT=$(find zultra -type f \( -name "zultra" -o -name "zultra.exe" \) 2>/dev/null | wc -l)
-  if [ "$BINARY_COUNT" -gt 0 ]; then
-    echo -e "${GREEN}✓${NC} Found: zultra/ directory with $BINARY_COUNT binaries"
-    echo -e "${BLUE}  Platforms:${NC}"
-    find zultra -type d -mindepth 1 -maxdepth 1 2>/dev/null | while read -r platform_dir; do
-      platform=$(basename "$platform_dir")
-      binary_file=$(find "$platform_dir" -type f \( -name "zultra" -o -name "zultra.exe" \) 2>/dev/null | head -n 1)
-      if [ -n "$binary_file" ]; then
-        size=$(du -h "$binary_file" 2>/dev/null | cut -f1 || echo "unknown")
-        echo -e "    - $platform ($size)"
-      fi
-    done
-  else
-    echo -e "${RED}✗${NC} zultra/ directory exists but contains no binaries"
-    MISSING_FILES+=("zultra binaries")
-  fi
-else
-  echo -e "${RED}✗${NC} Missing: zultra/ directory"
-  MISSING_FILES+=("zultra/")
-fi
-
 echo ""
 
+# Fail early if any required file is missing
 if [ ${#MISSING_FILES[@]} -gt 0 ]; then
   echo -e "${RED}❌ CANNOT PUBLISH: Missing required files${NC}"
   for file in "${MISSING_FILES[@]}"; do
@@ -57,6 +38,7 @@ fi
 echo -e "${GREEN}✅ ALL REQUIRED FILES PRESENT${NC}"
 echo ""
 
+# Display basic package info
 if [ -f "package.json" ]; then
   PACKAGE_NAME=$(node -p "require('./package.json').name" 2>/dev/null || echo "unknown")
   PACKAGE_VERSION=$(node -p "require('./package.json').version" 2>/dev/null || echo "unknown")
@@ -66,6 +48,7 @@ if [ -f "package.json" ]; then
   echo ""
 fi
 
+# Confirm publish action
 read -r -n 1 -p "$(echo -e ${YELLOW}Proceed with npm publish? [Y/n]${NC} )" CONFIRM
 echo
 
@@ -77,22 +60,23 @@ fi
 echo -e "${BLUE}📦 PUBLISHING TO NPM...${NC}"
 echo ""
 
+# Run npm publish
 if npm publish --access public; then
   echo ""
   echo -e "${GREEN}✅ SUCCESSFULLY PUBLISHED TO NPM!${NC}"
   echo ""
   echo -e "${BLUE}Next steps:${NC}"
-  echo "  1. Verify package on npm: https://www.npmjs.com/package/$PACKAGE_NAME"
-  echo "  2. Test installation: npm install -g $PACKAGE_NAME"
+  echo "  1. Verify package: https://www.npmjs.com/package/$PACKAGE_NAME"
+  echo "  2. Test install: npm install -g $PACKAGE_NAME"
   echo "  3. Tag the release on GitHub"
   echo ""
 else
   echo ""
   echo -e "${RED}❌ NPM PUBLISH FAILED${NC}"
   echo ""
-  echo -e "${YELLOW}Common reasons:${NC}"
-  echo "  - Version already exists (bump version in package.json)"
-  echo "  - Not logged in to npm (run: npm login)"
+  echo -e "${YELLOW}Common issues:${NC}"
+  echo "  - Version already exists (bump version)"
+  echo "  - Not logged in (npm login)"
   echo "  - Insufficient permissions"
   echo ""
   exit 1
