@@ -5,6 +5,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2025-11-05
+### Changed
+- **Replaced native binary builds (`nexe`) with esbuild bundling**
+  - CLI is now distributed as a single, minified JavaScript file instead of a compiled binary
+  - Greatly simplifies build and publish workflows while reducing package size
+- **Aligned build and release process** across both repos:
+  - `zultra-core` now uses `.sh` scripts to manage esbuild-based builds and synced releases
+  - `zultra-ai` (public repo) follows the same lightweight `esbuild` bundling pattern for NPM/GitHub
+- Updated `package.json` build and publish scripts for the new JS-based setup
+- Updated `files` and `bin` entries to point to the new bundled output (`dist/cli.js`)
+- Removed all `nexe`-related configurations, scripts, and dependencies
+
+### Removed
+- Dropped native binary compilation and related dependencies (`nexe`, build configs, binary outputs)
+- Removed all obsolete build and publish scripts referencing native binaries
+
+### Breaking Changes
+- The CLI is no longer shipped as a compiled native executable; it now runs as a Node-based JS bundle.  
+  Any automation or deployment relying on the old binary format must update to the new distribution.
+
 ## [1.3.0] - 2025-11-03
 ### Added
 - Introduced **native binaries** feature for improved CLI startup performance
