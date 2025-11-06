@@ -1,6 +1,6 @@
 {
   "name": "@zultralabs/ai",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Zultra is an intelligent ai-powered developer assistant for the terminal. It helps you generate, modify, and document code effortlessly, right from your command line.",
   "type": "module",
   "main": "./dist/zultra.js",

@@ -5,6 +5,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.2] - 2025-11-05
+### Changed
+- **Refined and modernized CLI interface**
+  - Introduced a unified **UI utilities module** (`src/utils/ui.ts`) for boxed layouts, dividers, and code blocks
+  - Enhanced all command outputs for a cleaner and more professional look
+
+- **Improved logger and command presentation**
+  - Standardized success, warning, and error messages
+  - Added bordered sections and headers for improved readability
+
+- **Updated all commands to use the new UI**
+  - `ai`: Boxed output with section headers and styled code blocks  
+  - `edit`: Boxed diff display, statistics, and summary boxes  
+  - `generate`: Styled spinners and section headers  
+  - `config`: Boxed configuration output  
+  - `update`: Polished update notifications with consistent colors
+
+- **Refined main CLI entry (`bin/zultra.ts`)**
+  - Replaced figlet banner with a professional Zultra banner  
+  - Improved help display and spacing for readability
+
+### Technical Notes
+- No new commands or breaking changes introduced.
+- Internal refactor focused on **UI consistency, color harmony, and branding polish**.
+- CLI now provides a more professional and cohesive developer experience.
+
 ## [2.0.1] - 2025-11-05
 ### Changed
 - **Refactored build system** to fully complete ESBuild bundling process  
