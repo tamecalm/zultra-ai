@@ -11,7 +11,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "node ./bin/zultra.ts",
+    "dev": "node ./bin/zultra.js",
     "build": "tsc",
     "build:bundle": "node scripts/build-bundle.mjs"
   },

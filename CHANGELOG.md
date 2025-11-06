@@ -5,6 +5,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2025-11-05
+### Changed
+- **Refactored build system** to fully complete ESBuild bundling process  
+  - Finalized `esbuild` integration with improved output and file permissions  
+  - Removed leftover native build references and ensured unified JS-only distribution  
+- **Improved development workflow**  
+  - Added simplified `npm run dev` for testing CLI commands locally  
+  - Enhanced compatibility for both Windows and Termux environments  
+
+### Technical Notes
+- This update finalizes the migration away from native binaries to a pure ESBuild-based bundle.
+- No breaking changes introduced; existing CLI commands remain fully compatible.
+
 ## [2.0.0] - 2025-11-05
 ### Changed
 - **Replaced native binary builds (`nexe`) with esbuild bundling**
